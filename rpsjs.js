@@ -13,13 +13,27 @@ function getComputerChoice() {
 function playerRock() {
     playerChoice = choices[0];
     console.log("Player threw "+playerChoice);
+    playGame()
 }
 function playerPaper() {
     playerChoice = choices[1];
     console.log("Player threw "+playerChoice);
+    playGame()
 }
 function playerScissors() {
     playerChoice = choices[2];
     console.log("Player threw "+playerChoice);
+    playGame()
+}
+
+/*function to play the game
+start by retrieving player and computer choices
+make if x || x || x statements to choose a winner
+declare a winner
+make if x == x statement for ties
+declare a tie and play again*/
+
+function playGame() {
+
 }
 
