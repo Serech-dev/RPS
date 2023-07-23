@@ -1,28 +1,31 @@
-const computerChoices = ["Rock!", "Paper!", "Scissors!"]
+const choices = ["Rock!", "Paper!", "Scissors!"]
 let playerChoice = "none"
 
 /*Getting computer choice via a randomly generated number from 0 to 2, returning just the number*/
 function getComputerChoice() {
     let randomIndex = Math.floor(Math.random() * 3);
-    console.log(randomIndex);
+    //console.log(randomIndex);
     console.log("Computer threw "+choices[randomIndex]);
     return(randomIndex);
 }
 
 /* Depending on which button is pressed, could also get player input via text*/
 function playerRock() {
-    playerChoice = choices[0];
-    console.log("Player threw "+playerChoice);
+    playerChoice = 0;
+    choiceName = choices[0];
+    console.log("Player threw "+choiceName);
     playGame()
 }
 function playerPaper() {
-    playerChoice = choices[1];
-    console.log("Player threw "+playerChoice);
+    playerChoice = 1;
+    choiceName = choices[1];
+    console.log("Player threw "+choiceName);
     playGame()
 }
 function playerScissors() {
-    playerChoice = choices[2];
-    console.log("Player threw "+playerChoice);
+    playerChoice = 2;
+    choiceName = choices[2];
+    console.log("Player threw "+choiceName);
     playGame()
 }
 
@@ -34,6 +37,20 @@ make if x == x statement for ties
 declare a tie and play again*/
 
 function playGame() {
-
+    let computerChoice = getComputerChoice()
+    if (computerChoice == 0 && playerChoice == 2 || 
+        computerChoice == 1 && playerChoice == 0 || 
+        computerChoice == 2 && playerChoice == 1) {
+        console.log("Oh no, you lost!"); 
+    }
+    else if (computerChoice == 2 && playerChoice == 0 || 
+        computerChoice == 0 && playerChoice == 1 || 
+        computerChoice == 1 && playerChoice == 2) {
+        console.log("Congrats, you won!");
+    }
+    else if (computerChoice == playerChoice) {
+        console.log("Tied, go again!");
+    }
+    else (console.log("Invalid result."))
 }
 
